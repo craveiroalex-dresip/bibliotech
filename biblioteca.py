@@ -32,7 +32,52 @@ def menu():
             print("Opção inválida! Tente novamente.")
 
 def cadastrar_livro():
-    print("\n--- Função cadastrar_livro ainda não implementada ---")
+    print("\n" + "-"*30)
+    print("    CADASTRO DE NOVO LIVRO")
+    print("-"*30)
+    
+    while True:
+        titulo = input("Título do livro: ").strip()
+        if titulo == "":
+            print("Erro: O título não pode ser vazio!")
+        else:
+            break
+    
+    while True:
+        autor = input("Autor do livro: ").strip()
+        if autor == "":
+            print("Erro: O autor não pode ser vazio!")
+        else:
+            break
+    
+    while True:
+        try:
+            ano = int(input("Ano de publicação (1500-2025): ").strip())
+            if 1500 <= ano <= 2025:
+                break
+            else:
+                print("Erro: O ano deve estar entre 1500 e 2025!")
+        except ValueError:
+            print("Erro: Digite um ano válido (número inteiro)!")
+    
+    while True:
+        try:
+            quantidade = int(input("Quantidade de exemplares: ").strip())
+            if quantidade > 0:
+                break
+            else:
+                print("Erro: A quantidade deve ser maior que 0!")
+        except ValueError:
+            print("Erro: Digite uma quantidade válida (número inteiro)!")
+    
+    livro = {
+        "titulo": titulo,
+        "autor": autor,
+        "ano": ano,
+        "quantidade": quantidade
+    }
+    livros.append(livro)
+    print(f"Livro '{titulo}' cadastrado com sucesso!")
 
 def listar_livros():
     print("\n--- Função listar_livros ainda não implementada ---")
