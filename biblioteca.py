@@ -80,7 +80,19 @@ def cadastrar_livro():
     print(f"Livro '{titulo}' cadastrado com sucesso!")
 
 def listar_livros():
-    print("\n--- Função listar_livros ainda não implementada ---")
+    print("\n" + "="*60)
+    print("                LISTA DE LIVROS CADASTRADOS")
+    print("="*60)
+    
+    if not livros:
+        print("    Nenhum livro cadastrado ainda.")
+    else:
+        print(f"{'Título':<30} {'Autor':<20} {'Ano':<6} {'Disponíveis':<10}")
+        print("-"*60)
+        for livro in livros:
+            print(f"{livro['titulo']:<30} {livro['autor']:<20} {livro['ano']:<6} {livro['quantidade']:<10}")
+    
+    print("="*60)
 
 def emprestar_livro():
     print("\n--- Função emprestar_livro ainda não implementada ---")
